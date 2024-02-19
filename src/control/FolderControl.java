@@ -6,6 +6,9 @@ public class FolderControl {
     public void addAppList(Folder folder, AppList appList){
         folder.getAppLists().add(appList);
     }
+    public void removeAppList(Folder folder, AppList appList){
+        folder.getAppLists().remove(searchAppList(folder, appList));
+    }
     public AppList searchAppList(Folder folder, AppList appList){
         for (int i = 0; i < folder.getAppLists().size(); i++) {
             if(folder.getAppLists().get(i).getName().equals(appList.getName())){

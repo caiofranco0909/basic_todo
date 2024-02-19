@@ -16,10 +16,15 @@ public class AppList {
         this.start = start;
         this.deadline = deadline;
     }
-    public AppList(String name, String description, Date start){
+    public AppList(String name, String description, Date date, boolean isDeadline){
         this.name = name;
         this.description = description;
-        this.start = start;
+        if (isDeadline){
+            this.deadline = date;
+        }
+        else{
+            this.start = date;
+        }
     }
     public AppList(String name, String description){
         this.name = name;
