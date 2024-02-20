@@ -1,0 +1,29 @@
+[33mcommit a24f81fcdcc1ad06348387723a6e3628d53596cc[m[33m ([m[1;36mHEAD -> [m[1;32mfeature[m[33m)[m
+Author: Caio Franco <caioporto246@gmail.com>
+Date:   Tue Feb 20 16:34:46 2024 -0300
+
+    Começo do desenvolvimento do BD
+
+[33mcommit df6bda10e7b6ae4888a14a0cae03a62d9bf95121[m
+Author: Caio Franco <caioporto246@gmail.com>
+Date:   Mon Feb 19 00:52:32 2024 -0300
+
+    Adição do restante das funções padrões de controle das samples iniciais
+
+[33mcommit 8fd5ad1203559bcf6a1bc46ef99753991a69eba4[m
+Author: Caio Franco <caioporto246@gmail.com>
+Date:   Thu Feb 15 20:36:23 2024 -0300
+
+    Adicionando funções ao FolderControl
+
+[33mcommit 9fe56b7de6c4c46cb00706a942467c94729af411[m[33m ([m[1;33mtag: v0.1.0[m[33m)[m
+Author: Caio Franco <caioporto246@gmail.com>
+Date:   Thu Feb 15 15:52:44 2024 -0300
+
+    Criação das classes da pasta sample(Task,Folder,AppList)
+
+[33mcommit f4fcb999afdc3ef03b7af04bf1d9722fdaacbfef[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Caio Franco <caioporto246@gmail.com>
+Date:   Thu Feb 15 14:47:28 2024 -0300
+
+    Terminando de Configurar a alocação do projeto para Git
