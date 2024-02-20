@@ -11,7 +11,7 @@ public class AppListControl {
         return new AppList(name, description, start, deadline);
     }
     public AppList createAppList(String name, String description,Date date, boolean isDeadline){
-        return new AppList(name, description,date, isDeadline);
+        return  new AppList(name, description,date, isDeadline);
     }
     public AppList createAppList(String name, String description){
         return new AppList(name, description);
