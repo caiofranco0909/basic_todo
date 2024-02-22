@@ -1,12 +1,16 @@
 package sample;
 
 public class Task {
+    private int id;
     private String name;
     private boolean checkded;
     private static int count;
+    private static int nextId;
 
     public Task(String name){
         this.name = name;
+        id = nextId;
+        nextId++;
     }
 
     public String getName() {
@@ -31,6 +35,10 @@ public class Task {
 
     public static void setCount(int count) {
         Task.count = count;
+    }
+
+    public int getId() {
+        return id;
     }
     
     

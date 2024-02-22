@@ -3,18 +3,27 @@ package sample;
 import java.util.ArrayList;
 
 public class Folder {
+    private int id;
     private String name;
     private String description;
+    private Folder parent;
     private ArrayList<AppList> appLists;
     private ArrayList<Folder> folders;
+    private static int nextId = 1;
 
-    public Folder(String name, String description){
+    public Folder(String name, String description, Folder parent){
         this.name = name;
         this.description = description;
+        this.parent = parent;
+        id = nextId;
+        nextId++;
     }
 
-    public Folder(String name){
+    public Folder(String name, Folder parent){
         this.name = name;
+        this.parent = parent;
+        id = nextId;
+        nextId++;
     }
 
     public String getName() {
@@ -39,6 +48,18 @@ public class Folder {
 
     public ArrayList<Folder> getFolders() {
         return folders;
+    }
+
+    public Folder getParent() {
+        return parent;
+    }
+
+    public void setParent(Folder parent) {
+        this.parent = parent;
+    }
+
+    public int getId() {
+        return id;
     }
     
 }

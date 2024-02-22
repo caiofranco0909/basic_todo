@@ -18,11 +18,11 @@ public class FolderControl {
         return null;
     }
     //Funções Relacionas a Pastas
-    public Folder createFolder(String name, String description){
+    public Folder createFolder(String name, String description, Folder parent){
         if (description == null){
-            return new Folder(name);
+            return new Folder(name, parent);
         }
-        return new Folder(name, description);
+        return new Folder(name, description, parent);
     }
     public void addFolder(Folder mainFolder, Folder newFolder){
         mainFolder.getFolders().add(newFolder);

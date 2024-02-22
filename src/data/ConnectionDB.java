@@ -9,8 +9,8 @@ public class ConnectionDB{
     private static final String URL = "jdbc:postgresql://localhost:5432/todo_data";
     private static final String USUARIO = "to_do";
     private static final String SENHA = "to_do";
+    private static Connection connection = null;
     public static Connection concectBD(){
-        Connection connection = null;
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(URL, USUARIO, SENHA);
