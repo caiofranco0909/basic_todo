@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class Conexao{
-    private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
+public class ConnectionDB{
+    private static final String URL = "jdbc:postgresql://localhost:5432/todo_data";
     private static final String USUARIO = "to_do";
     private static final String SENHA = "to_do";
     public static Connection concectBD(){
@@ -33,4 +33,5 @@ public class Conexao{
             }
         }
     }
+    
 }

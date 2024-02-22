@@ -1,13 +1,15 @@
 package vision;
 
-import java.sql.Connection;
 
-import data.Conexao;
+import data.*;
+import sample.Folder;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
-        Connection connection = Conexao.concectBD();
-        Conexao.unconnectBD(connection);
+        DataControl dc = new DataControl();
+        dc.creatTable(0);
+        dc.creatTable(1);
+        dc.creatTable(2);
     }
 }
