@@ -1,6 +1,6 @@
 package control;
 
-import java.util.Date;
+import java.sql.Date;
 
 import sample.AppList;
 import sample.Task;

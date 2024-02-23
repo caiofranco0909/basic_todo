@@ -3,9 +3,9 @@ package data;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
 import sample.Folder;
-
+import java.sql.Date;
+import java.sql.PreparedStatement;
 public class DataWriter {
     public static void statementExtUpdate(Connection connection, String query) throws SQLException{
         Statement statement;
@@ -57,17 +57,28 @@ public class DataWriter {
                     break;
             }
     }
-    public void insertFolder(Connection connection, int id, String name, String description, Folder parent) throws SQLException{
-        if(parent != null){
-            String query = String.format("INSERT INTO folder(id_folder, name_folder,description_folder,parent_id) VALUES (%d, '%s', '%s', %d) ",id,name,description,parent.getId());
+    public void insertFolder(Connection connection, int id, String name, String description, int parentId) throws SQLException{
+        if(parentId != 0){
+            String query = String.format("INSERT INTO folder(id_folder, name_folder,description_folder,parent_id) VALUES (%d, '%s', '%s', %d) ",id,name,description,parentId);
             statementExtUpdate(connection, query);
+            System.out.println("Folder insertion completed");
         }else{
             String query = String.format("INSERT INTO folder(id_folder, name_folder,description_folder) VALUES (%d, '%s', '%s') ",id,name,description);
             statementExtUpdate(connection, query);
+            System.out.println("Folder insertion completed");
         }
     }
-    public void insertAppList(Connection connection, String name, String description, Date start, Date deadline){
-    
+    public void insertAppList(Connection connection,int id, String name, String description, Date start, Date deadline, int folderId) throws SQLException{
+        String query = String.format("INSERT INTO appList(id_appList, name_appList,description_appList, start_appList, deadline_appList, folder_id) VALUES (?, ?, ?, ?, ?, ?) ");
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, id);
+        statement.setString(2, name);
+        statement.setString(3, description);
+        statement.setDate(4, start);
+        statement.setDate(5, deadline);
+        statement.setInt(6, folderId);
+        statement.executeUpdate();
+        System.out.println("AppList insertion completed");
     }
     public void insertTask(Connection connection, String name){
         
