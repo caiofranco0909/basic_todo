@@ -5,9 +5,6 @@ import java.sql.Date;
 
 import data.ConnectionDB;
 import data.DataWriter;
-import sample.Folder;
-
-
 public class DataControl {
     private static Connection connection;
     private DataWriter dataWriter = new DataWriter();
