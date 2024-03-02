@@ -6,22 +6,15 @@ public class Folder {
     private int id;
     private String name;
     private String description;
-    private Folder parent;
+    private int parentId;
     private ArrayList<AppList> appLists;
     private ArrayList<Folder> folders;
     private static int nextId = 1;
 
-    public Folder(String name, String description, Folder parent){
+    public Folder(String name, String description, int parentId){
         this.name = name;
         this.description = description;
-        this.parent = parent;
-        id = nextId;
-        nextId++;
-    }
-
-    public Folder(String name, Folder parent){
-        this.name = name;
-        this.parent = parent;
+        this.parentId = parentId;
         id = nextId;
         nextId++;
     }
@@ -50,12 +43,12 @@ public class Folder {
         return folders;
     }
 
-    public Folder getParent() {
-        return parent;
+    public int getParent() {
+        return parentId;
     }
 
-    public void setParent(Folder parent) {
-        this.parent = parent;
+    public void setParent( int parentId) {
+        this.parentId = parentId;
     }
 
     public int getId() {

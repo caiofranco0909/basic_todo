@@ -3,7 +3,6 @@ package data;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
-import sample.Folder;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 public class DataWriter {
@@ -44,7 +43,7 @@ public class DataWriter {
                     query = "CREATE TABLE task (" +
                     "id_task INTEGER NOT NULL," +
                     "name_task dm_name," +
-                    "list_id INTEGER REFERENCES appList(id_appList)," +
+                    "appList_id INTEGER REFERENCES appList(id_appList)," +
                     "checked_task BOOLEAN DEFAULT FALSE," +
                     "count_task INTEGER DEFAULT 0," +
                     "PRIMARY KEY(id_task)" +
@@ -80,9 +79,14 @@ public class DataWriter {
         statement.executeUpdate();
         System.out.println("AppList insertion completed");
     }
-    public void insertTask(Connection connection, String name){
-        
-
+    public void insertTask(Connection connection,int id, String name, int appList_id)throws SQLException{
+        String query = String.format("INSERT INTO task(id_task, name_task,appList_id) VALUES (?,?,?)");
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, id);
+        statement.setString(2, name);
+        statement.setInt(3, appList_id);
+        statement.executeUpdate();
+        System.out.println("Task insertion completed");
     }
     
 }
