@@ -1,7 +1,15 @@
 package control;
 import sample.Folder;
+
+import java.util.ArrayList;
+
 import sample.AppList;
+
 public class FolderControl {
+    private static ArrayList<Folder> folders;
+    public FolderControl(){
+
+    }
     //Funcções Relacionadas a Listas
     public void addAppList(Folder folder, AppList appList){
         folder.getAppLists().add(appList);
@@ -18,11 +26,10 @@ public class FolderControl {
         return null;
     }
     //Funções Relacionas a Pastas
-    public Folder createFolder(String name, String description, Folder parent){
-        if (description == null){
-            return new Folder(name, parent);
-        }
-        return new Folder(name, description, parent);
+    public Folder createFolder(String name, String description, int parentId){
+            Folder folder = new Folder(name, description, parentId);
+            folders.add(folder);
+            return folder;
     }
     public void addFolder(Folder mainFolder, Folder newFolder){
         mainFolder.getFolders().add(newFolder);
@@ -38,4 +45,12 @@ public class FolderControl {
         }
         return null;
     }
+    //Getters and Setters
+    public static ArrayList<Folder> getFolders() {
+        return folders;
+    }
+    public static void setFolders(ArrayList<Folder> folders) {
+        FolderControl.folders = folders;
+    }
+    
 }
