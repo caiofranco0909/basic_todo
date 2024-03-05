@@ -5,9 +5,7 @@ import control.AppListControl;
 import control.DataControl;
 import control.FolderControl;
 import control.TaskControl;
-import sample.AppList;
-import sample.Folder;
-import sample.Task;
+
 
 public class Main {
     public static void main(String[] args) throws Exception {
