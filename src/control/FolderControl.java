@@ -7,6 +7,7 @@ import sample.AppList;
 
 public class FolderControl {
     private static ArrayList<Folder> folders;
+    private static DataControl dataControl = new DataControl();
     public FolderControl(){
 
     }
@@ -29,6 +30,7 @@ public class FolderControl {
     public Folder createFolder(String name, String description, int parentId){
             Folder folder = new Folder(name, description, parentId);
             folders.add(folder);
+            dataControl.insertFolder(folder.getId(), name, description, parentId);
             return folder;
     }
     public void addFolder(Folder mainFolder, Folder newFolder){

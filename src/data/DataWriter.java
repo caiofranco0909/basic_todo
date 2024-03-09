@@ -18,8 +18,8 @@ public class DataWriter {
                 case 0:
                     query = "CREATE TABLE folder (" +
                     "id_folder INTEGER NOT NULL," +
-                    "name_folder dm_name," +
-                    "description_folder dm_description," +
+                    "name_folder VARCHAR(200)," +
+                    "description_folder VARCHAR(400)," +
                     "parent_id INTEGER REFERENCES folder(id_folder)," +
                     "PRIMARY KEY(id_folder)" +
                     ");";
@@ -29,8 +29,8 @@ public class DataWriter {
                 case 1:
                 query = "CREATE TABLE appList(" +
                 "id_appList INTEGER NOT NULL," +
-                "name_appList dm_name," +
-                "description_appList dm_description," +
+                "name_appList VARCHAR(200)," +
+                "description_appList VARCHAR(400)," +
                 "start_appList DATE," +
                 "deadline_appList DATE," +
                 "folder_id INTEGER REFERENCES folder(id_folder)," +
@@ -42,7 +42,7 @@ public class DataWriter {
                 case 2:
                     query = "CREATE TABLE task (" +
                     "id_task INTEGER NOT NULL," +
-                    "name_task dm_name," +
+                    "name_task VARCHAR(200)," +
                     "appList_id INTEGER REFERENCES appList(id_appList)," +
                     "checked_task BOOLEAN DEFAULT FALSE," +
                     "count_task INTEGER DEFAULT 0," +
